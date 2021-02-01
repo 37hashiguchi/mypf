@@ -3,23 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>37's Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="js/toppage.js"></script>
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script>
-          $(function() {
-        var h1 = $('h1');
-        var txt_array = h1.text().split('');
-        $('h1').html('');
-        $.each(txt_array, function(index, element) {
-          var new_element = $("<span/>").text(element).css({ opacity: 0 });
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Homemade+Apple&family=Major+Mono+Display&family=Vidaloka&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script type="text/JavaScript">  
+    //ファーストビューの文字
+       $(function() {
+     var h1 = $('h1');
+     var txt_array = h1.text().split('');
+     $('h1').html('');
+     $.each(txt_array, function(index, element) {
+     var new_element = $("<span/>").text(element).css({ opacity: 0 });
           h1.append(new_element);
           new_element.delay(index * 50);
           new_element.animate({opacity: 1}, 1000);
         });
       });
-
-      $(function() {
+    //トップボタン
+   $(function() {
     var topBtn = $('#page-top');    
     topBtn.hide();
     //スクロールが100に達したらボタン表示
@@ -38,20 +44,33 @@
         return false;
     });
 });
+
+//マウス座標を取得
+$(document).on("mousemove", function(e) {
+    mouseX = e.pageX;
+    mouseY = e.pageY;
+});
+$("a").on({
+  "mouseenter": function() {
+    cursor.addClass("is-active");
+    follower.addClass("is-active");
+  },
+  "mouseleave": function() {
+    cursor.removeClass("is-active");
+    follower.removeClass("is-active");
+  }
+});
   </script>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Homemade+Apple&family=Major+Mono+Display&family=Vidaloka&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <header>
     <nav>
     <ul>
-      <li><a href=”#”>TOP</a></li>
-      <li><a href=”#”>ABOUT</a></li>
-      <li><a href=”#”>MENU1</a></li>
-      <li><a href=”#”>MENU2</a></li>
-      <li><a href=”#”>CONTACT</a></li>
+      <li><a href="#firstview">TOP</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#works">WORKS</a></li>
+      <li><a href="mailto:m37h84@gmail.com">CONTACT</a></li>
     </ul>
     </nav>
   </header>
@@ -60,6 +79,7 @@
     <h1>37's portfolio site</h1>
   </div>
   <div class="box1">
+    <div id="about"></div>
     <h2>ABOUT</h2>
     <p>Thanks for visiting! I'm Mina Hashiguchi.
       The beginner of coding, programming and design, who creates for cliants sometimes.
@@ -94,6 +114,13 @@
         </dl>
       </li> 
       <li>
+        <span class="icon">2018 Dec.</span>
+        <dl>
+          <dt>Devorced</dt>
+          <dd>OMG!</dd>
+        </dl>
+      </li> 
+      <li>
         <span class="icon">2019 Feb. to Mar.</span>
         <dl>
           <dt>Studied</dt>
@@ -110,18 +137,88 @@
       <li>
         <span class="icon">2020</span>
         <dl>
-          <dt>Studied and created</dt>
+          <dt>Studying and created</dt>
           <dd>By myself. XD, Animate, Dreamweaver, SEO, Web marketing, cognitive science, 
-            psychology and so on.</dd>
+            psychology, Vue.js, and so on.</dd>
         </dl>
       </li>
       </ul>
+      <p>"Why does this person learn many things?" Because not only coding skill, a lot of knowledge is needed to produce an effect as a asset, web page.
+      </p>
   </div>
+  
+  <div class="box1">
+    <div id="works"></div>
+    <h2>WORKS</h2>
+    <div class="slider-area">
+    <div class="slider-for slider">
+      <div><img src="img/ushisan.png" alt="年賀状の牛"></div>
+      <div><img src="img/kariya.png" alt="加里屋旅館バナー"></div>
+      <div><img src="img/ffi1.png" alt="ffiロゴ"></div>
+      <div><img src="img/nest.png" alt="NESTロゴ"></div>
+      <div><img src="img/bnr.png" alt="デザイナーズミートアップバナー"></div>
+      <div><img src="img/memphis.png" alt="memphisアイコン"></div>
+      <div><img src="img/bnr2.png" alt="化粧品バナー"></div>
+      <div><img src="img/nezumi.png" alt="年賀状のカヤネズミ"></div>
+      <div><img src="img/bc.png" alt="名刺サンプル"></div>
+      <div><img src="img/nankoen.png" alt="南光苑名刺"></div>
+      <div><img src="img/prs.png" alt="PRSロゴ"></div>
+    </div>
+    <div class="slider-nav">
+      <div><img src="img/ushisan.png" alt="年賀状の牛"></div>
+      <div><img src="img/kariya.png" alt="加里屋旅館バナー"></div>
+      <div><img src="img/ffi1.png" alt="ffiロゴ"></div>
+      <div><img src="img/nest.png" alt="NESTロゴ"></div>
+      <div><img src="img/bnr.png" alt="デザイナーズミートアップバナー"></div>
+      <div><img src="img/memphis.png" alt="memphisアイコン"></div>
+      <div><img src="img/bnr2.png" alt="化粧品バナー"></div>
+      <div><img src="img/nezumi.png" alt="年賀状のカヤネズミ"></div>
+      <div><img src="img/bc.png" alt="名刺サンプル"></div>
+      <div><img src="img/nankoen.png" alt="南光苑名刺"></div>
+      <div><img src="img/prs.png" alt="PRSロゴ"></div>
+    </div>
+  </div>
+  <div id="gif-area">
+    <picture>
+      <a href="http://ffi-shibuya.com/"><source media="(min-width: 768px)" srcset="img/ffi.png"></a>
+      <a href="http://ffi-shibuya.com/"><img src="img/ffi.gif" alt="作成したFFiのホームページ"></a>
+    </picture>
+    <p>▲Freelance team FFi's web site<br>
+      (Direction,design,a part of coding)</p>
+    <picture>
+      <a href="https://sayonara-guppy./site"><source media="(min-width: 768px)" srcset="img/guppy.png"></a>
+      <a href="https://sayonara-guppy.site/"><img src="img/guppy.gif" alt="作成したさよならグッピーのホームページ"></a>
+    </picture>
+    <p>▲Japanese rock band Sayonara Guppy's web site<br>
+    (Made WordPress original theam by myself)</p>
+    <p>This portfolio site. All is by myself.</p>
+  </div>
+    </div>
+
+    <footer>
+      <p><a href="mailto:m37h84@gmail.com">Send Message</a></p>
+    </footer>
 
   <p id="page-top"><a href="#wrap">PAGE TOP</a></p>
 
+  <script>
+$('.slider-for').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.slider-nav'
+});
+$('.slider-nav').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  asNavFor: '.slider-for',
+  dots: true,
+  centerMode: true,
+  focusOnSelect: true
+});
 
-
+    </script>
 </body>
 
 </html>
