@@ -11,9 +11,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloud  flare.com/ajax/libs/font-awesome-animation/0.2.1/font-awesome-animation.css" type="text/css" media="all" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  <script>  
+<script>  
     //ファーストビューの文字
        $(function() {
      var h1 = $('h1');
@@ -46,7 +45,6 @@
         return false;
     });
 });
-
   </script>
 </head>
 
@@ -191,7 +189,9 @@
   <div class="follower"></div>
   <!-- --------------------------- -->
 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
   <script>
+    // スライダー
 $('.slider-for').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
@@ -208,6 +208,7 @@ $('.slider-nav').slick({
   focusOnSelect: true
 });
 
+// カーソル
 var
 cursor = $(".cursor"),
 follower = $(".follower"),
